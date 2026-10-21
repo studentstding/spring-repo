@@ -1,12 +1,18 @@
 pipeline {
 
     agent {
-        docker {
-            image 'maven:3.9.9-eclipse-temurin-21'
-        }
+      any {}
     }
 
     stages {
+
+         stage('Debug') {
+            steps {
+                sh 'pwd'
+                sh 'ls -la'
+                sh 'find . -name pom.xml'
+            }
+        }
 
         stage('Build') {
             steps {
